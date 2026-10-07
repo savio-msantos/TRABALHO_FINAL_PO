@@ -127,9 +127,9 @@ int main(const int argc, const char **inputFile)
 	int distanciaAtual = calculateTourDistance(solucaoAtual);
 	int melhorDistanciaSA = distanciaAtual;
 
-	double temperatura = 3.0;
+	double temperatura = 100.0;
 
-	while (temperatura > 0.001)
+	for (int iteracao = 0; iteracao < 1000000; iteracao++)
 	{
 
 		for (int i = 0; i < size; i++)
@@ -169,7 +169,7 @@ int main(const int argc, const char **inputFile)
 			}
 		}
 
-		temperatura = temperatura * 0.999;
+		temperatura = temperatura * 0.99999;
 
 		if (distanciaAtual < melhorDistanciaSA)
 		{
